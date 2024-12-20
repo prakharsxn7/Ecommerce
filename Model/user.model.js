@@ -29,6 +29,10 @@ const user_schema= new mongoose.Schema({
     ,usertype:{
         type:String,
         required:true,
+        enum:["USER","ADMIN"],
+        default:"USER"
     }
-})
+},{timestamps:true,versionKey:false})
+
+module.exports=mongoose.model("User",userSchema)// this will make a collection "Users" 
 
